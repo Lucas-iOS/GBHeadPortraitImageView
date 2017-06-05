@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "GBHeadPortraitImageView.h"
+#import "GBPhotoPickManager.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *photoButton;
 
 @end
 
@@ -17,17 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    GBHeadPortraitImageView *headPortrait = [[GBHeadPortraitImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width * 0.5 - 50, self.view.frame.size.height * 0.5 - 50, 100, 100) currentVC:self resultBlock:^(UIImage *newImage) {
-        //TO DO
-    }];
-    headPortrait.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:headPortrait];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)photoClick:(UIButton *)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[GBPhotoPickManager shareInstance] presentPicker:kPickerTypePhoto currentVC:self imageBlock:^(NSDictionary *infoDict, BOOL isCancel) {
+            [sender setBackgroundImage:[infoDict valueForKey:UIImagePickerControllerOriginalImage] forState:UIControlStateNormal];
+        }];
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+        [[GBPhotoPickManager shareInstance] presentPicker:kPickerTypeCamera currentVC:self imageBlock:^(NSDictionary *infoDict, BOOL isCancel) {
+            [sender setBackgroundImage:[infoDict valueForKey:UIImagePickerControllerOriginalImage] forState:UIControlStateNormal];
+        }];
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
 
 @end

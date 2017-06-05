@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00282301EE53498003B0AD7 /* GBPhotoPickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A002822F1EE53498003B0AD7 /* GBPhotoPickManager.m */; };
 		A0D484DD1D146657005F3CC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D484DC1D146657005F3CC3 /* main.m */; };
 		A0D484E01D146657005F3CC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D484DF1D146657005F3CC3 /* AppDelegate.m */; };
 		A0D484E31D146657005F3CC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D484E21D146657005F3CC3 /* ViewController.m */; };
@@ -15,7 +16,6 @@
 		A0D484EB1D146657005F3CC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D484E91D146657005F3CC3 /* LaunchScreen.storyboard */; };
 		A0D484F61D146657005F3CC3 /* GBHeadPortraitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D484F51D146657005F3CC3 /* GBHeadPortraitDemoTests.m */; };
 		A0D485011D146657005F3CC3 /* GBHeadPortraitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D485001D146657005F3CC3 /* GBHeadPortraitDemoUITests.m */; };
-		A0D485111D14666F005F3CC3 /* GBHeadPortraitImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D485101D14666F005F3CC3 /* GBHeadPortraitImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A002822E1EE53498003B0AD7 /* GBPhotoPickManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBPhotoPickManager.h; sourceTree = "<group>"; };
+		A002822F1EE53498003B0AD7 /* GBPhotoPickManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBPhotoPickManager.m; sourceTree = "<group>"; };
 		A0D484D81D146657005F3CC3 /* GBHeadPortraitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBHeadPortraitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D484DC1D146657005F3CC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0D484DE1D146657005F3CC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,8 +54,6 @@
 		A0D484FC1D146657005F3CC3 /* GBHeadPortraitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBHeadPortraitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D485001D146657005F3CC3 /* GBHeadPortraitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBHeadPortraitDemoUITests.m; sourceTree = "<group>"; };
 		A0D485021D146657005F3CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0D4850F1D14666F005F3CC3 /* GBHeadPortraitImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBHeadPortraitImageView.h; sourceTree = "<group>"; };
-		A0D485101D14666F005F3CC3 /* GBHeadPortraitImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBHeadPortraitImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A002822D1EE5345F003B0AD7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A002822E1EE53498003B0AD7 /* GBPhotoPickManager.h */,
+				A002822F1EE53498003B0AD7 /* GBPhotoPickManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
 		A0D484CF1D146657005F3CC3 = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +113,7 @@
 		A0D484DA1D146657005F3CC3 /* GBHeadPortraitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				A0D4850E1D14666F005F3CC3 /* GBHeadPortraitImageView */,
+				A002822D1EE5345F003B0AD7 /* Manager */,
 				A0D484DE1D146657005F3CC3 /* AppDelegate.h */,
 				A0D484DF1D146657005F3CC3 /* AppDelegate.m */,
 				A0D484E11D146657005F3CC3 /* ViewController.h */,
@@ -142,15 +151,6 @@
 				A0D485021D146657005F3CC3 /* Info.plist */,
 			);
 			path = GBHeadPortraitDemoUITests;
-			sourceTree = "<group>";
-		};
-		A0D4850E1D14666F005F3CC3 /* GBHeadPortraitImageView */ = {
-			isa = PBXGroup;
-			children = (
-				A0D4850F1D14666F005F3CC3 /* GBHeadPortraitImageView.h */,
-				A0D485101D14666F005F3CC3 /* GBHeadPortraitImageView.m */,
-			);
-			path = GBHeadPortraitImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,8 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0D484E31D146657005F3CC3 /* ViewController.m in Sources */,
+				A00282301EE53498003B0AD7 /* GBPhotoPickManager.m in Sources */,
 				A0D484E01D146657005F3CC3 /* AppDelegate.m in Sources */,
-				A0D485111D14666F005F3CC3 /* GBHeadPortraitImageView.m in Sources */,
 				A0D484DD1D146657005F3CC3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,6 +512,7 @@
 				A0D485071D146657005F3CC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0D485081D146657005F3CC3 /* Build configuration list for PBXNativeTarget "GBHeadPortraitDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +521,7 @@
 				A0D4850A1D146657005F3CC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0D4850B1D146657005F3CC3 /* Build configuration list for PBXNativeTarget "GBHeadPortraitDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +530,7 @@
 				A0D4850D1D146657005F3CC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
