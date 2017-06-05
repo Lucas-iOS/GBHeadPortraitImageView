@@ -20,6 +20,13 @@ typedef void(^ImageBlock)(NSDictionary *infoDict, BOOL isCancel);
 
 + (instancetype)shareInstance;
 
+/**
+ 调用系统UIImagePickerController
+
+ @param pickerType Photo和Camera
+ @param currentVC 当前调用的VC
+ @param imageBlock 回调NSDictionary和BOOL
+ */
 - (void)presentPicker:(kPickerType)pickerType currentVC:(UIViewController *)currentVC imageBlock:(ImageBlock)imageBlock;
 
 @end
